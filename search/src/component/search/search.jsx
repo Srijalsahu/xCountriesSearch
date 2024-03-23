@@ -23,10 +23,10 @@ const Search = () => {
   }, []);
 
   const handleSearch = (e) => {
-    const term = e.target.value.toLowerCase();
+    const term = e.target.value;
     setSearchTerm(term);
     const filtered = countries.filter(country =>
-      country.name.common.toLowerCase().includes(term)
+      country.name.common.toLowerCase().includes(term.toLowerCase())
     );
     setFilteredCountries(filtered);
   };
@@ -35,14 +35,13 @@ const Search = () => {
     <div className={styles.container}>
       <input
         type="text"
+        placeholder="Search Country"
         value={searchTerm}
         onChange={handleSearch}
-        placeholder="Search for a country..."
-        className={styles.searchInput}
       />
       <div className={styles.countryContainer}>
         {filteredCountries.map(country => (
-          <div key={country.cca3} className={styles.countryCard}>
+          <div key={country.cca2} className={styles.countryCard}>
             <img src={country.flags.png} alt={country.name.common} />
             <h2>{country.name.common}</h2>
           </div>
