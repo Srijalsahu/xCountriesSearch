@@ -41,7 +41,7 @@ const Countries = () => {
       />
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
         {filteredCountries.map(country => (
-          <div key={country.cca3} style={{ width: '200px' }}>
+          <div key={country.cca3} className="countryCard">
             <img src={country.flags.svg} alt={`${country.name.common} flag`} style={{ width: '100%' }} />
             <p>{country.name.common}</p>
           </div>
