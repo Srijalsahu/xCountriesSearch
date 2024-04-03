@@ -39,9 +39,9 @@ const Countries = () => {
         value={searchTerm}
         onChange={handleSearchChange}
       />
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
         {filteredCountries.map(country => (
-          <div key={country.cca3}>
+          <div key={country.cca3} style={{ width: '200px' }}>
             <img src={country.flags.svg} alt={`${country.name.common} flag`} style={{ width: '100%' }} />
             <p>{country.name.common}</p>
           </div>
