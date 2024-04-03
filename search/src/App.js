@@ -1,11 +1,11 @@
-import Search from "./component/search/search";
-
+import "./App.css";
+import Countries from "./countries";
 
 function App() {
   return (
-    <div>
-      <Search/>
-    </div>
+    <>
+    <Countries/>
+    </>
   );
 }
 
